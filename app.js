@@ -34,7 +34,8 @@
     "GREAT BRITAIN": "UK", "ENGLAND": "UK", "SCOTLAND": "UK", "WALES": "UK", "USA": "US", "UNITED STATES OF AMERICA": "US",
     "DEUTSCHLAND": "DE", "ESPAÑA": "ES", "ESPANA": "ES", "ITALIA": "IT", "NEDERLAND": "NL", "HOLLAND": "NL", "THE NETHERLANDS": "NL",
     "SVERIGE": "SE", "DANMARK": "DK", "ÖSTERREICH": "AT", "OSTERREICH": "AT", "POLSKA": "PL", "SCHWEIZ": "CH", "SUISSE": "CH",
-    "BELGIQUE": "BE", "BELGIË": "BE", "BELGIE": "BE", "IRELAND": "IE", "FRANCE": "FR"
+    "BELGIQUE": "BE", "BELGIË": "BE", "BELGIE": "BE", "IRELAND": "IE", "FRANCE": "FR",
+    "CZECHIA": "CZ", "ČESKO": "CZ", "CESKO": "CZ", "NORGE": "NO", "SUOMI": "FI"
   });
   const codeAlias = { GB: "UK", GBR: "UK", USA: "US" };
   RULES.forEach((r) => (codeAlias[r.code] = r.code));

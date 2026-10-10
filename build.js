@@ -130,7 +130,7 @@ for (const r of RULES) {
 <main>
 <p class="crumb"><a href="../index.html#countries">All countries</a> / ${CC.esc(r.name)}</p>
 <h1>Is B2B cold email legal in ${CC.esc(r.name)}?</h1>
-<p class="lede">${short[r.named]} when you write to a named person at a company. ${r.generic !== r.named ? `For a generic address such as info@: ${short[r.generic].toLowerCase()}.` : "The same applies to generic addresses such as info@."}</p>
+<p class="lede">${r.named === "unknown" ? "For a named person at a company the answer is not verified yet." : `${short[r.named]} when you write to a named person at a company.`} ${r.generic !== r.named ? `For a generic address such as info@: ${short[r.generic].toLowerCase()}.` : "The same applies to generic addresses such as info@."}</p>
 <div class="card">${CC.countryCard(r, CHECKED)}</div>
 <p class="cta"><a href="../index.html#check">Check a whole lead list</a></p>
 </main>

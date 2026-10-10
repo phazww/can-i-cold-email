@@ -7,7 +7,7 @@
     { key: "personal", who: "Sole trader or personal mailbox", eg: () => "jane@gmail.com" }
   ];
   const EG_TLD = { UK: "co.uk", US: "com", AU: "com.au" };
-  const TAG = { law: "Law", regulator: "Regulator", secondary: "Commentary" };
+  const TAG = { law: "Law", regulator: "Regulator", official: "Official", secondary: "Commentary" };
 
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const chip = (v) => `<span class="chip ${v}">${LABEL[v]}</span>`;

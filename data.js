@@ -210,5 +210,44 @@ window.RULES = [
     ],
     notes: ["The provision targets mass advertising. How it applies to individually written one-to-one emails was not checked."],
     sources: [{ label: "Unfair Competition Act (UCA, SR 241), art. 3 para. 1 let. o (Fedlex, English translation)", url: "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/en", type: "law" }]
+  },
+  {
+    code: "CZ", slug: "czech-republic", name: "Czech Republic", tlds: ["cz"],
+    named: "consent", generic: "consent", personal: "consent", quality: "primary",
+    rule: "Section 7(2) of Act 480/2004 allows electronic contact details to be used for commercial communications only for users who gave prior consent. The Act defines a user as any natural or legal person, so companies are covered.",
+    must: [
+      "Get consent before the first email",
+      "Mark every message clearly as a commercial communication, do not hide the sender, and include a valid address for refusing further messages (section 7(4))",
+      "Existing customers only: allowed for your own similar products or services if they can clearly refuse, free of charge, at collection and in every message (section 7(3))"
+    ],
+    notes: ["No position of the data protection office (ÚOOÚ) specifically on emails to company addresses was found."],
+    sources: [{ label: "Zákon č. 480/2004 Sb., § 2 písm. e) a § 7 (text via Zákony pro lidi)", url: "https://www.zakonyprolidi.cz/cs/2004-480", type: "law" }]
+  },
+  {
+    code: "NO", slug: "norway", name: "Norway", tlds: ["no"],
+    named: "consent", generic: "ok", personal: "consent", quality: "primary",
+    rule: "Section 15 of the Marketing Control Act bans electronic marketing to natural persons without prior consent. Legal persons are not covered by the ban. The preparatory works say employees should also be protected from individually addressed marketing email at work.",
+    must: [
+      "Without consent, write only to a company's general address",
+      "Treat a named employee's address as a natural person's and get consent",
+      "Existing customers: allowed for your own goods or services if they can opt out easily and free of charge when the address is collected and in later messages"
+    ],
+    notes: ["The reading for named work addresses comes from the preparatory works, not from the wording of section 15. The Consumer Authority's guidance could not be opened during this check."],
+    sources: [
+      { label: "Markedsføringsloven § 15 (Lovdata)", url: "https://lovdata.no/dokument/NL/lov/2009-01-09-2/KAPITTEL_3", type: "law" },
+      { label: "Stortinget, Innst. O. nr. 22 (2004-2005), preparatory works", url: "https://www.stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Innstillinger/Odelstinget/2004-2005/inno-200405-022/1/", type: "official" }
+    ]
+  },
+  {
+    code: "FI", slug: "finland", name: "Finland", tlds: ["fi"],
+    named: "unknown", generic: "ok", personal: "consent", quality: "primary",
+    rule: "Email marketing to natural persons needs prior consent (section 200). Direct marketing to legal persons is allowed if the recipient has not specifically prohibited it (section 202).",
+    must: [
+      "Give every legal person an easy, free way to prohibit further use of its contact details, and say so clearly in each message",
+      "Make the message clearly recognisable as marketing, do not conceal the sender, and include a valid address for ending the messages (section 203)",
+      "Existing customers who are natural persons: allowed for your own similar products, with an opt-out at collection and in every message"
+    ],
+    notes: ["Whether a named employee's work address counts as a natural person or as the company was not checked, so that verdict is left open."],
+    sources: [{ label: "Act on Electronic Communications Services (917/2014), sections 200, 202 and 203 (Finlex, English translation)", url: "https://www.finlex.fi/en/legislation/translations/2014/eng/917", type: "law" }]
   }
 ];

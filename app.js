@@ -106,7 +106,15 @@
   const input = $("list"), out = $("results"), fallback = $("fallback"), dl = $("download");
   let last = [];
 
-  function run() {
+  // Anonymous usage events: only the event name is sent, never the list.
+  function track(name) {
+    try {
+      if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true });
+    } catch (e) {}
+  }
+
+  function run(source) {
+    track(source);
     last = classify(input.value, fallback.value);
     if (!last.length) { out.innerHTML = `<p class="note">No email addresses found.</p>`; dl.disabled = true; return; }
     const n = { ok: 0, cond: 0, consent: 0, unknown: 0 };
@@ -130,7 +138,7 @@
     dl.disabled = false;
   }
 
-  $("run").addEventListener("click", run);
+  $("run").addEventListener("click", () => run("check-list"));
   $("sample").addEventListener("click", () => {
     input.value = [
       "email,company,country",
@@ -145,16 +153,17 @@
       "jan@voorbeeld.nl,Voorbeeld BV,Netherlands",
       "kontor@eksempel.dk,Eksempel ApS,Denmark"
     ].join("\n");
-    run();
+    run("check-sample");
   });
   $("file").addEventListener("change", (e) => {
     const f = e.target.files[0];
     if (!f) return;
     const reader = new FileReader();
-    reader.onload = () => { input.value = reader.result; run(); };
+    reader.onload = () => { input.value = reader.result; run("check-file"); };
     reader.readAsText(f);
   });
   dl.addEventListener("click", () => {
+    track("download-csv");
     const q = (s) => `"${String(s).replace(/"/g, '""')}"`;
     const csv = ["email,country,country_source,address_type,verdict,reason,source"]
       .concat(last.map((r) => [r.email, r.code, r.how, r.type, CC.LABEL[r.verdict], r.why, r.source].map(q).join(",")))

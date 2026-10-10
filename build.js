@@ -34,8 +34,10 @@ const foot = `
 <footer class="site">
   <p>This is a research summary, not legal advice. Rules are those of the recipient's country and cover the first unsolicited marketing email to a business recipient. Data protection law (GDPR, UK GDPR) applies separately whenever an address identifies a person.</p>
   <p>Last checked ${CHECKED}. Found a mistake or need another country? Write to <a href="https://x.com/phaz_dev" rel="noopener">@phaz_dev</a>.</p>
+  <p>Visits are counted with GoatCounter, without cookies. Lists you check are never sent anywhere.</p>
 </footer>
-</div>`;
+</div>
+<script data-goatcounter="https://phaz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>`;
 
 const table = (root) => `
 <div class="tablewrap"><table>
@@ -85,7 +87,7 @@ const index = `${head(
     <label for="fallback">If the country is unknown (.com addresses), assume</label>
     <select id="fallback"><option value="">nothing, mark as unknown</option>${sorted.map((r) => `<option value="${r.code}">${CC.esc(r.name)}</option>`).join("")}</select>
   </div>
-  <p class="privacy">Your list never leaves this page. The check runs in your browser and nothing is uploaded.</p>
+  <p class="privacy">Your list never leaves this page. The check runs in your browser and no address is uploaded.</p>
   <div id="results"></div>
 </section>
 

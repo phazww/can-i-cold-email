@@ -44,17 +44,21 @@ window.RULES = [
   },
   {
     code: "AU", slug: "australia", name: "Australia", tlds: ["au"],
-    named: "cond", generic: "cond", personal: "consent", quality: "secondary",
-    rule: "The Spam Act requires consent, express or inferred. Consent can be inferred when a work-related address is conspicuously published, carries no statement that commercial messages are unwanted, and your message relates directly to the recipient's role.",
+    named: "cond", generic: "cond", personal: "cond", quality: "primary",
+    rule: "The Spam Act requires consent, express or inferred. A published address alone is not consent. Consent is taken to exist only when a work address is conspicuously published, carries no statement that unsolicited commercial messages are unwanted, and your message is relevant to that person's work, role or function.",
     must: [
-      "Check that the address is published openly with no \"no commercial messages\" statement",
-      "Make sure the message relates directly to the recipient's role or function",
-      "Identify the sender and include a working unsubscribe"
+      "Check that the address is conspicuously published and has no \"no unsolicited messages\" statement next to it",
+      "Make sure the message is relevant to the work-related business, functions or duties of the person, role or position",
+      "Identify yourself with correct contact details",
+      "Include a clear, free unsubscribe and honour it within 5 working days"
     ],
-    notes: ["The ACMA page did not load during this check. The conditions above come from third-party pages quoting ACMA. Verify on acma.gov.au."],
+    notes: [
+      "The same exception covers self-employed individuals whose address is conspicuously published.",
+      "ACMA calls express consent best practice and puts the burden of proving consent on the sender."
+    ],
     sources: [
-      { label: "ACMA: Avoid sending spam (verify here)", url: "https://www.acma.gov.au/avoid-sending-spam", type: "regulator" },
-      { label: "Flying Solo, quoting ACMA on conspicuous publication", url: "https://www.flyingsolo.com.au/forums/topic/consent-email-sms-marketing/", type: "secondary" }
+      { label: "Spam Act 2003, Schedule 2, clause 4 (Federal Register of Legislation)", url: "https://www.legislation.gov.au/C2004A01214/latest/text", type: "law" },
+      { label: "ACMA: Avoid sending spam", url: "https://www.acma.gov.au/avoid-sending-spam", type: "regulator" }
     ]
   },
   {
@@ -119,14 +123,18 @@ window.RULES = [
   },
   {
     code: "BE", slug: "belgium", name: "Belgium", tlds: ["be"],
-    named: "consent", generic: "ok", personal: "consent", quality: "secondary",
-    rule: "Advertising by email needs prior consent. According to Belgian law-firm commentary, a Royal Decree of 4 April 2003 exempts emails to legal persons at impersonal addresses such as info@.",
+    named: "consent", generic: "ok", personal: "consent", quality: "primary",
+    rule: "Advertising by email needs prior consent. The Royal Decree of 4 April 2003 lifts that requirement for legal persons when the address used is impersonal, such as info@ or contact@.",
     must: [
-      "Without consent, use only impersonal company addresses (info@, contact@)",
-      "Explain how to object and offer a working way to do so in every message"
+      "Without consent, write only to impersonal addresses of companies",
+      "Anyone may tell you, free of charge and without giving reasons, to stop: confirm by email, comply within a reasonable time and keep a list of those who objected",
+      "Existing customers: allowed for your own similar products if they could object when the address was collected"
     ],
-    notes: ["Not yet checked against the official text of the Royal Decree or FPS Economy guidance."],
-    sources: [{ label: "Lexgo: Email marketing, a reminder of what you need to consider", url: "https://www.lexgo.be/en/news-and-articles/4554-email-marketing-kind-reminder-of-what-you-need-to-consider", type: "secondary" }]
+    notes: ["A named address such as jane.doe@company.be is not impersonal, so it needs consent."],
+    sources: [
+      { label: "Arrêté royal du 4 avril 2003 réglementant l'envoi de publicités par courrier électronique, art. 1 et 2 (Justel)", url: "https://www.ejustice.just.fgov.be/eli/arrete/2003/04/04/2003011238/justel", type: "law" },
+      { label: "Lexgo: Email marketing, a reminder of what you need to consider", url: "https://www.lexgo.be/en/news-and-articles/4554-email-marketing-kind-reminder-of-what-you-need-to-consider", type: "secondary" }
+    ]
   },
   {
     code: "IE", slug: "ireland", name: "Ireland", tlds: ["ie"],
@@ -178,27 +186,29 @@ window.RULES = [
   },
   {
     code: "PL", slug: "poland", name: "Poland", tlds: ["pl"],
-    named: "consent", generic: "consent", personal: "consent", quality: "secondary",
-    rule: "Article 398 of the Electronic Communications Law bans sending commercial information, including direct marketing, to a subscriber or end user without prior consent. Polish legal commentary reads this as covering companies as well as individuals.",
+    named: "consent", generic: "consent", personal: "consent", quality: "primary",
+    rule: "Article 398 of the Electronic Communications Law bans sending commercial information, including direct marketing, to a subscriber or end user without prior consent. The law defines an end user as any entity using the service, so companies are covered as well as individuals.",
     must: [
-      "Get consent before the first email, tied to the specific address",
-      "Do not treat a published address as consent"
+      "Get consent before the first email",
+      "Consent can be given by the recipient providing their address for the purpose of receiving commercial information at that address",
+      "Do not treat an address published for other purposes as consent"
     ],
-    notes: ["No UKE or UODO statement on B2B email was found. The B2B reading comes from commentary."],
+    notes: ["Breaking the ban is also an act of unfair competition under article 398(4). No UKE or UODO statement specifically on B2B email was found."],
     sources: [
-      { label: "Prawo komunikacji elektronicznej, art. 398 (text via LexLege)", url: "https://lexlege.pl/komunik-elektr/art-398/", type: "law" },
-      { label: "Prawo.pl: marketing consents under the Electronic Communications Law", url: "https://www.prawo.pl/biznes/zgody-marketingowe-i-kontakty-handlowe-co-mowi-prawo-komunikacji-elektronicznej,530981.html", type: "secondary" }
+      { label: "Prawo komunikacji elektronicznej, art. 398 (text via LexLege)", url: "https://lexlege.pb.pl/prawo-komunikacji-elektronicznej/art-398/", type: "law" },
+      { label: "Prawo komunikacji elektronicznej, art. 2, definitions of abonent and użytkownik końcowy (text via LexLege)", url: "https://lexlege.pb.pl/prawo-komunikacji-elektronicznej/art-2/", type: "law" }
     ]
   },
   {
     code: "CH", slug: "switzerland", name: "Switzerland", tlds: ["ch"],
-    named: "consent", generic: "consent", personal: "consent", quality: "secondary",
-    rule: "Article 3(1)(o) of the Unfair Competition Act treats mass advertising by email as unfair unless the sender has prior consent, names the correct sender and offers a free, easy way to refuse. Whether business recipients are treated differently was not confirmed.",
+    named: "consent", generic: "consent", personal: "consent", quality: "primary",
+    rule: "Under article 3(1)(o) of the Unfair Competition Act it is unfair to send mass advertising by telecommunication without the customer's prior consent, without the correct sender, or without a simple and free option of refusal. The text speaks of \"the customer\" and does not exempt business recipients.",
     must: [
-      "Get consent before automated mass mailings",
-      "Existing customers only: exception for your own similar offers if they were told they could refuse"
+      "Get consent before sending mass advertising",
+      "Name the correct sender and offer a simple, free way to refuse in every message",
+      "Existing customers only: allowed for your own similar goods or services if you pointed out the option of refusal when you received their contact details"
     ],
-    notes: ["Based on Swiss legal publishers, not the SECO page or the statute text. The rule targets mass advertising."],
-    sources: [{ label: "WEKA: Rechtssicheres E-Mail-Marketing in der Schweiz", url: "https://www.weka.ch/themen/datenschutz-und-it-recht/datenschutz-umsetzen/article/datenschutz-newsletter-rechtssicheres-e-mail-marketing-in-der-schweiz/", type: "secondary" }]
+    notes: ["The provision targets mass advertising. How it applies to individually written one-to-one emails was not checked."],
+    sources: [{ label: "Unfair Competition Act (UCA, SR 241), art. 3 para. 1 let. o (Fedlex, English translation)", url: "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/en", type: "law" }]
   }
 ];

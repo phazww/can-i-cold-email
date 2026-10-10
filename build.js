@@ -100,7 +100,7 @@ const index = `${head(
 <section id="method">
   <h2>Method and limits</h2>
   <ul class="method">
-    <li>Each country was checked on ${CHECKED} against the text of the law or the regulator's own guidance where it could be opened. ${nPrimary} of ${RULES.length} countries are checked that way. The rest are marked "Commentary only".</li>
+    <li>Each country was checked on ${CHECKED} against the text of the law or the regulator's own guidance where it could be opened. ${nPrimary === RULES.length ? `All ${RULES.length} countries are checked that way.` : `${nPrimary} of ${RULES.length} countries are checked that way. The rest are marked "Commentary only".`}</li>
     <li>"No consent needed" never means no rules. Every country still requires a real sender identity and a working way to opt out.</li>
     <li>The country is taken from your list. If there is no country column, it is guessed from the domain ending (.de, .fr) and labelled as a guess.</li>
     <li>An address is treated as generic when the part before @ is a role word such as info, contact or sales, and as personal when the domain is a consumer mail provider such as gmail.com.</li>

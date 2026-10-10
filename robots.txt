@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://phazww.github.io/can-i-cold-email/sitemap.xml

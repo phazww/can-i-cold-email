@@ -249,5 +249,20 @@ window.RULES = [
     ],
     notes: ["Whether a named employee's work address counts as a natural person or as the company was not checked, so that verdict is left open."],
     sources: [{ label: "Act on Electronic Communications Services (917/2014), sections 200, 202 and 203 (Finlex, English translation)", url: "https://www.finlex.fi/en/legislation/translations/2014/eng/917", type: "law" }]
+  },
+  {
+    code: "PT", slug: "portugal", name: "Portugal", tlds: ["pt"],
+    named: "unknown", generic: "ok", personal: "consent", quality: "primary",
+    rule: "Article 13-A of Law 41/2004 requires prior express consent of a subscriber who is a natural person, or of the user. That rule does not apply to subscribers that are legal persons: they may be emailed until they refuse and register on the national opt-out list kept by the consumer authority (DGC).",
+    must: [
+      "Before emailing companies, check the DGC list of legal persons that object. Senders are obliged to consult it and it is updated monthly",
+      "Do not hide who the message is from, and give a valid contact for asking you to stop (article 13-A(4))",
+      "Existing customers: allowed for your own similar products if they can refuse easily and free of charge at collection and in every message"
+    ],
+    notes: [
+      "A named employee's address is left open: the consent rule also protects the \"user\", and whether that covers an employee using a company mailbox was not checked.",
+      "Text as added by Law 46/2012. Later amendments were not checked."
+    ],
+    sources: [{ label: "Lei n.º 46/2012, artigos 13.º-A e 13.º-B aditados à Lei n.º 41/2004 (Diário da República)", url: "https://files.diariodarepublica.pt/1s/2012/08/16700/0481304826.pdf", type: "law" }]
   }
 ];

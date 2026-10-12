@@ -163,6 +163,12 @@
     reader.onload = () => { input.value = reader.result; run("check-file"); };
     reader.readAsText(f);
   });
+  $("want").addEventListener("click", () => {
+    track("want-report");
+    $("want").disabled = true;
+    $("want").textContent = "Noted, thank you";
+    $("want-note").innerHTML = 'Counted. If you want to hear when it is ready, or tell me what the report should include, write to <a href="https://x.com/phaz_dev" rel="noopener" target="_blank">@phaz_dev</a>.';
+  });
   dl.addEventListener("click", () => {
     track("download-csv");
     const q = (s) => `"${String(s).replace(/"/g, '""')}"`;

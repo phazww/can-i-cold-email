@@ -27,7 +27,7 @@ const head = (title, desc, root, page) => `<!doctype html>
 <div class="wrap">
 <header class="site">
   <a class="brand" href="${root}index.html">${SITE} <span>B2B rules by country</span></a>
-  <nav class="site"><a href="${root}index.html#check">Check a list</a><a href="${root}index.html#countries">Countries</a><a href="${root}index.html#method">Method</a></nav>
+  <nav class="site"><a href="${root}index.html#check">Check a list</a><a href="${root}index.html#report">Report</a><a href="${root}index.html#countries">Countries</a><a href="${root}index.html#method">Method</a></nav>
 </header>`;
 
 const foot = `
@@ -89,6 +89,27 @@ const index = `${head(
   </div>
   <p class="privacy">Your list never leaves this page. The check runs in your browser and no address is uploaded.</p>
   <div id="results"></div>
+</section>
+
+<section id="report">
+  <h2>Campaign report</h2>
+  <p class="sub">For teams that send to several countries at once and need something to show a client or a manager.</p>
+  <div class="card offer">
+    <div class="offer-main">
+      <p class="rule">Upload the lead list for one campaign and get a report back:</p>
+      <ul class="must">
+        <li>The list split into three files: send, send only with conditions, do not send</li>
+        <li>For every country in the list: what the law allows, with the source</li>
+        <li>What each email must contain in that country: sender identity, address, opt-out wording</li>
+        <li>A one-page summary you can forward as it is</li>
+      </ul>
+    </div>
+    <div class="offer-side">
+      <div class="price">$29 <span>per campaign</span></div>
+      <button id="want">I want this</button>
+      <p class="privacy" id="want-note">Not built yet. The button only tells me someone is interested. Nothing is charged and nothing is collected.</p>
+    </div>
+  </div>
 </section>
 
 <section id="countries">

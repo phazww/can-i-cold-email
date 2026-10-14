@@ -301,5 +301,17 @@ window.RULES = [
     ],
     notes: [],
     sources: [{ label: "Processing of Personal Data (Electronic Communications Sector) Regulations, S.L. 586.01, regulation 9 (Legislation Malta)", url: "https://legislation.mt/eli/sl/586.1/eng", type: "law" }]
+  },
+  {
+    code: "LU", slug: "luxembourg", name: "Luxembourg", tlds: ["lu"], checked: "2026-10-14",
+    named: "unknown", generic: "ok", personal: "consent", quality: "primary",
+    rule: "Article 11 of the amended law of 30 May 2005 requires prior consent for marketing email, but paragraph 5 limits that requirement to subscribers who are natural persons. Writing to a company does not need consent. Every message must show who it is from and give a valid address for asking you to stop.",
+    must: [
+      "Do not disguise or conceal who the email is from",
+      "Give a valid address where the recipient can ask you to stop, also when emailing a company",
+      "Existing customers: allowed for your own similar products if they could object free of charge at collection and in every message"
+    ],
+    notes: ["Paragraph 1 speaks of the subscriber or the user, and the law does not say whether a named employee at a company address counts as the company. I did not find regulator guidance on this, so that case is marked as not verified."],
+    sources: [{ label: "Loi modifiée du 30 mai 2005 (vie privée, communications électroniques), article 11 (Legilux, consolidated)", url: "https://legilux.public.lu/eli/etat/leg/loi/2005/05/30/n4/consolide/20110901", type: "law" }]
   }
 ];

@@ -153,7 +153,7 @@ for (const r of RULES) {
 <h1>Is B2B cold email legal in ${CC.esc(r.name)}?</h1>
 <p class="lede">${r.named === "unknown" ? "For a named person at a company the answer is not verified yet." : `${short[r.named]} when you write to a named person at a company.`} ${r.generic !== r.named ? `For a generic address such as info@: ${short[r.generic].toLowerCase()}.` : "The same applies to generic addresses such as info@."}</p>
 <div class="card">${CC.countryCard(r, CHECKED)}</div>
-<p class="cta"><a href="../index.html#check">Check a whole lead list</a></p>
+<p class="cta"><a href="../index.html#check">Check a whole lead list</a> <a class="ghost" href="https://phazww.github.io/coldproof/?country=${r.code}">Check one draft email for ${CC.esc(r.name)}</a></p>
 </main>
 ${foot}
 </body>

@@ -32,6 +32,7 @@ window.RULES = [
   },
   {
     code: "CA", slug: "canada", name: "Canada", tlds: ["ca"],
+    bySource: { vendor: { named: "consent", generic: "consent" } },
     named: "cond", generic: "cond", personal: "consent", quality: "primary",
     rule: "CASL requires consent, express or implied, for commercial email, including B2B. Consent is implied when the recipient has conspicuously published the address without a statement that they do not want unsolicited messages, and your message is relevant to their business or role.",
     must: [
@@ -44,6 +45,7 @@ window.RULES = [
   },
   {
     code: "AU", slug: "australia", name: "Australia", tlds: ["au"],
+    bySource: { vendor: { named: "consent", generic: "consent", personal: "consent" } },
     named: "cond", generic: "cond", personal: "cond", quality: "primary",
     rule: "The Spam Act requires consent, express or inferred. A published address alone is not consent. Consent is taken to exist only when a work address is conspicuously published, carries no statement that unsolicited commercial messages are unwanted, and your message is relevant to that person's work, role or function.",
     must: [
@@ -108,6 +110,7 @@ window.RULES = [
   },
   {
     code: "NL", slug: "netherlands", name: "Netherlands", tlds: ["nl"],
+    bySource: { vendor: { named: "consent", generic: "consent" } },
     named: "cond", generic: "cond", personal: "consent", quality: "primary",
     rule: "Article 11.7 of the Telecommunications Act requires provable prior consent of the subscriber or user. No consent is needed only for contact details the recipient has designated and published for that purpose, used in line with that purpose.",
     must: [
@@ -316,6 +319,7 @@ window.RULES = [
   },
   {
     code: "SK", slug: "slovakia", name: "Slovakia", tlds: ["sk"], checked: "2026-10-14",
+    bySource: { published: { named: "ok", generic: "ok" }, vendor: { named: "consent", generic: "consent", personal: "consent" } },
     named: "cond", generic: "cond", personal: "cond", quality: "primary",
     rule: "Section 116(3) of the Electronic Communications Act requires prior provable consent for marketing email. Section 116(15) lifts that requirement when the email goes to published contact details of a legal person or a sole trader. Every email must let the recipient refuse further messages easily and free of charge, and must show the sender's identity and an address for asking to stop.",
     must: [
@@ -329,6 +333,7 @@ window.RULES = [
   },
   {
     code: "SI", slug: "slovenia", name: "Slovenia", tlds: ["si"], checked: "2026-10-14",
+    bySource: { published: { named: "ok" }, vendor: { named: "consent" } },
     named: "cond", generic: "ok", personal: "consent", quality: "primary",
     rule: "Article 226 of the Electronic Communications Act (ZEKom-2) requires prior consent for marketing email, but paragraph 4 limits that to subscribers who are natural persons. Paragraph 6 allows email to a person's address when the company has published it as its own contact address. Every email must show who it is from and give a valid address for asking you to stop.",
     must: [

@@ -55,8 +55,10 @@
 
   function classify(text, fallback) {
     const lines = text.split(/\r?\n/).filter((l) => l.trim());
-    let countryCol = -1;
+    let countryCol = -1, sourceCol = -1;
     if (lines.length && !EMAIL.test(lines[0])) {
+      // Where the address came from: published by the company itself, or found by a vendor.
+      sourceCol = cells(lines[0]).map((c) => c.toLowerCase().replace(/[\s_.-]+/g, "")).findIndex((c) => /^(source|addresssource|emailsource|contactsource|origin|published)$/.test(c));
       const header = cells(lines[0]).map((c) => c.toLowerCase().replace(/[\s_.-]+/g, ""));
       // Exports from lead tools name the column in many ways: countryCode, country_code, company_country, location.country...
       const exact = header.findIndex((c) => /^(country|countrycode|countryname|pays|land|pa[ií]s|paese|kraj)$/.test(c));
@@ -92,17 +94,30 @@
       if (!code && fallback) { code = fallback; how = "default country"; }
       const type = personal ? "personal" : GENERIC.has(local.replace(/[._-]/g, "")) || GENERIC.has(local) ? "generic" : "named";
       if (!code) { rows.push(row(email, null, "Country unknown. Add a country column or set a default.", type)); continue; }
-      rows.push(row(email, code, how, type));
+      rows.push(row(email, code, how, type, sourceCol >= 0 ? sourceOf(parts[sourceCol]) : ""));
     }
     return rows;
   }
 
-  function row(email, code, how, type) {
+  // "published" = the company put this address out itself (website, imprint, register);
+  // "vendor" = found, enriched, guessed or bought. Anything else leaves the verdict as it is.
+  function sourceOf(v) {
+    v = (v || "").toLowerCase().trim();
+    if (!v) return "";
+    if (/^(yes|true|1|published|public|website|site|web|own site|company site|contact page|imprint|impressum|register|directory)$/.test(v) || /publish|website|contact page|imprint|impressum/.test(v)) return "published";
+    if (/^(no|false|0)$/.test(v) || /vendor|enrich|apollo|zoominfo|hunter|clearbit|lusha|apify|scrap|guess|pattern|bought|purchas|database|finder|linkedin/.test(v)) return "vendor";
+    return "";
+  }
+  const SOURCE_NOTE = { published: "published by the company", vendor: "found by a tool, not published by the company" };
+
+  function row(email, code, how, type, src) {
     const r = code ? byCode[code] : null;
-    const verdict = r && type ? r[type] : "unknown";
+    const override = r && type && src && r.bySource && r.bySource[src] && r.bySource[src][type];
+    const verdict = override || (r && type ? r[type] : "unknown");
+    if (override) how = `${how}; address ${SOURCE_NOTE[src]}`;
     return {
-      email, code: code || "", how, type: type || "", verdict,
-      why: r ? WHY[verdict](r.name) : how,
+      email, code: code || "", how, type: type || "", verdict, src: src || "",
+      why: r ? WHY[verdict](r.name) + (override ? ` In ${r.name} this depends on whether the company published the address.` : "") : how,
       slug: r ? r.slug : "", source: r ? r.sources[0].url : ""
     };
   }
@@ -175,8 +190,8 @@
   dl.addEventListener("click", () => {
     track("download-csv");
     const q = (s) => `"${String(s).replace(/"/g, '""')}"`;
-    const csv = ["email,country,country_source,address_type,verdict,reason,source"]
-      .concat(last.map((r) => [r.email, r.code, r.how, r.type, CC.LABEL[r.verdict], r.why, r.source].map(q).join(",")))
+    const csv = ["email,country,country_source,address_type,address_source,verdict,reason,source"]
+      .concat(last.map((r) => [r.email, r.code, r.how, r.type, r.src, CC.LABEL[r.verdict], r.why, r.source].map(q).join(",")))
       .join("\n");
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));

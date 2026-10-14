@@ -313,5 +313,18 @@ window.RULES = [
     ],
     notes: ["Paragraph 1 speaks of the subscriber or the user, and the law does not say whether a named employee at a company address counts as the company. I did not find regulator guidance on this, so that case is marked as not verified."],
     sources: [{ label: "Loi modifiée du 30 mai 2005 (vie privée, communications électroniques), article 11 (Legilux, consolidated)", url: "https://legilux.public.lu/eli/etat/leg/loi/2005/05/30/n4/consolide/20110901", type: "law" }]
+  },
+  {
+    code: "SK", slug: "slovakia", name: "Slovakia", tlds: ["sk"], checked: "2026-10-14",
+    named: "cond", generic: "cond", personal: "cond", quality: "primary",
+    rule: "Section 116(3) of the Electronic Communications Act requires prior provable consent for marketing email. Section 116(15) lifts that requirement when the email goes to published contact details of a legal person or a sole trader. Every email must let the recipient refuse further messages easily and free of charge, and must show the sender's identity and an address for asking to stop.",
+    must: [
+      "Write only to contact details the company or sole trader has published, for example on its website",
+      "Offer a simple, free way to refuse further emails in every message",
+      "Show who you are and an address where the recipient can ask you to stop",
+      "Private individuals need prior consent, which you must be able to prove"
+    ],
+    notes: ["Whether a named employee's address counts as published contact details of the company depends on where it was published. An address you guessed or bought is not published by the recipient."],
+    sources: [{ label: "Zákon č. 452/2021 Z. z. o elektronických komunikáciách, § 116 (Slov-Lex, version in force from 18 Aug 2026)", url: "https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2021/452/", type: "law" }]
   }
 ];

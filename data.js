@@ -289,5 +289,17 @@ window.RULES = [
     ],
     notes: ["Whether a named employee's work address counts as the company or as a natural person was not checked. Section 8 of the same law sets further rules on how a commercial communication must be identified, not covered here."],
     sources: [{ label: "Law on Information Society Services, section 9 (Likumi.lv, official English translation)", url: "https://likumi.lv/ta/en/en/id/96619", type: "law" }]
+  },
+  {
+    code: "MT", slug: "malta", name: "Malta", tlds: ["mt"], checked: "2026-10-14",
+    named: "consent", generic: "consent", personal: "consent", quality: "primary",
+    rule: "Regulation 9 of S.L. 586.01 bans unsolicited marketing email to a subscriber or user, whether a natural or a legal person, unless they gave prior consent in writing.",
+    must: [
+      "Get prior written consent before the first email, also from companies",
+      "Do not disguise or conceal who the email is from, and give a valid address for asking you to stop",
+      "Existing customers: allowed for your own similar products if they could object free of charge at collection and in every message"
+    ],
+    notes: [],
+    sources: [{ label: "Processing of Personal Data (Electronic Communications Sector) Regulations, S.L. 586.01, regulation 9 (Legislation Malta)", url: "https://legislation.mt/eli/sl/586.1/eng", type: "law" }]
   }
 ];

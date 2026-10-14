@@ -369,5 +369,17 @@ window.RULES = [
       { label: "Law 3471/2006, article 11, consolidated Greek text (e-nomothesia.gr)", url: "https://www.e-nomothesia.gr/kat-dedomena-prosopikou-kharaktera/n-3471-2006.html", type: "law" },
       { label: "Law 3471/2006 in English, original 2006 text (ADAE, Hellenic Authority for Communication Security and Privacy)", url: "https://www.adae.gr/images/pdf/LAW_3471-2006-EN.pdf", type: "regulator" }
     ]
+  },
+  {
+    code: "CY", slug: "cyprus", name: "Cyprus", tlds: ["cy"], checked: "2026-10-14",
+    named: "unknown", generic: "unknown", personal: "consent", quality: "primary",
+    rule: "Section 106(1) of Law 112(I)/2004 allows marketing email only to subscribers or users who gave prior consent, and section 106(5) limits that rule to subscribers who are natural persons. For companies, the same paragraph refers to a separate 2005 Order protecting the legitimate interests of legal persons, which I could not read, so emails to companies are marked as not verified. Every email must show who it is from and give a valid address for asking you to stop.",
+    must: [
+      "Do not hide who the email is from or on whose behalf it is sent",
+      "Give a valid address where the recipient can ask you to stop",
+      "Existing customers: allowed for your own similar products if they could object free of charge at collection and in every message"
+    ],
+    notes: ["Rules for companies depend on the 2005 Order on legal persons and unsolicited communications, which is not covered here yet."],
+    sources: [{ label: "Law 112(I)/2004 on electronic communications and postal services, section 106 (CyLaw, consolidated)", url: "http://www.cylaw.org/nomoi/enop/non-ind/2004_1_112/full.html", type: "law" }]
   }
 ];

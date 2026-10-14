@@ -251,7 +251,7 @@ window.RULES = [
     sources: [{ label: "Act on Electronic Communications Services (917/2014), sections 200, 202 and 203 (Finlex, English translation)", url: "https://www.finlex.fi/en/legislation/translations/2014/eng/917", type: "law" }]
   },
   {
-    code: "PT", slug: "portugal", name: "Portugal", tlds: ["pt"],
+    code: "PT", slug: "portugal", name: "Portugal", tlds: ["pt"], checked: "2026-10-11",
     named: "unknown", generic: "ok", personal: "consent", quality: "primary",
     rule: "Article 13-A of Law 41/2004 requires prior express consent of a subscriber who is a natural person, or of the user. That rule does not apply to subscribers that are legal persons: they may be emailed until they refuse and register on the national opt-out list kept by the consumer authority (DGC).",
     must: [
@@ -264,5 +264,30 @@ window.RULES = [
       "Text as added by Law 46/2012. Later amendments were not checked."
     ],
     sources: [{ label: "Lei n.º 46/2012, artigos 13.º-A e 13.º-B aditados à Lei n.º 41/2004 (Diário da República)", url: "https://files.diariodarepublica.pt/1s/2012/08/16700/0481304826.pdf", type: "law" }]
+  },
+  {
+    code: "EE", slug: "estonia", name: "Estonia", tlds: ["ee"], checked: "2026-10-14",
+    named: "unknown", generic: "ok", personal: "consent", quality: "primary",
+    rule: "Under section 103-1 of the Electronic Communications Act, email marketing to a natural person needs prior consent. Marketing to a legal person is allowed if every message gives a clear, free and easy way to refuse, which can be used over an electronic network.",
+    must: [
+      "Give a clear, free and easy way to refuse in every message, usable by email or another electronic channel",
+      "Make it possible to identify who the message is sent for",
+      "Stop once the recipient has refused",
+      "Existing customers: allowed for your own similar products if they could refuse at collection and in every message"
+    ],
+    notes: ["Whether a named employee's work address counts as the company or as a natural person was not checked. The English translation used is the 2019 consolidated version; later amendments were not checked."],
+    sources: [{ label: "Electronic Communications Act, section 103-1 (Riigi Teataja, English translation)", url: "https://www.riigiteataja.ee/en/eli/524012019006/consolide", type: "law" }]
+  },
+  {
+    code: "LV", slug: "latvia", name: "Latvia", tlds: ["lv"], checked: "2026-10-14",
+    named: "unknown", generic: "ok", personal: "consent", quality: "primary",
+    rule: "Section 9 of the Law on Information Society Services bans commercial email without prior free and explicit consent, but paragraph 6 limits that ban to natural persons. For every recipient, the sender must give a valid address for asking to stop and must respect refusals.",
+    must: [
+      "Include a valid email address or number where the recipient can ask you to stop",
+      "Respect every refusal",
+      "Existing customers: allowed for your own similar products if they did not object and can refuse free of charge in every message"
+    ],
+    notes: ["Whether a named employee's work address counts as the company or as a natural person was not checked. Section 8 of the same law sets further rules on how a commercial communication must be identified, not covered here."],
+    sources: [{ label: "Law on Information Society Services, section 9 (Likumi.lv, official English translation)", url: "https://likumi.lv/ta/en/en/id/96619", type: "law" }]
   }
 ];

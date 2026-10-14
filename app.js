@@ -35,7 +35,7 @@
     "DEUTSCHLAND": "DE", "ESPAÑA": "ES", "ESPANA": "ES", "ITALIA": "IT", "NEDERLAND": "NL", "HOLLAND": "NL", "THE NETHERLANDS": "NL",
     "SVERIGE": "SE", "DANMARK": "DK", "ÖSTERREICH": "AT", "OSTERREICH": "AT", "POLSKA": "PL", "SCHWEIZ": "CH", "SUISSE": "CH",
     "BELGIQUE": "BE", "BELGIË": "BE", "BELGIE": "BE", "IRELAND": "IE", "FRANCE": "FR",
-    "CZECHIA": "CZ", "ČESKO": "CZ", "CESKO": "CZ", "NORGE": "NO", "SUOMI": "FI"
+    "CZECHIA": "CZ", "ČESKO": "CZ", "CESKO": "CZ", "NORGE": "NO", "SUOMI": "FI", "EESTI": "EE", "LATVIJA": "LV"
   });
   const codeAlias = { GB: "UK", GBR: "UK", USA: "US" };
   RULES.forEach((r) => (codeAlias[r.code] = r.code));

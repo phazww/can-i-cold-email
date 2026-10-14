@@ -32,7 +32,7 @@
       <ul class="must">${r.must.map((m) => `<li>${esc(m)}</li>`).join("")}</ul>
       ${r.notes.map((n) => `<p class="note">${esc(n)}</p>`).join("")}
       <div class="src">
-        ${quality(r)} · checked ${esc(checked)}
+        ${quality(r)} · checked ${esc(r.checked || checked)}
         <ul>${r.sources.map((s) => `<li><span class="tag">${TAG[s.type]}</span><a href="${esc(s.url)}" rel="noopener" target="_blank">${esc(s.label)}</a></li>`).join("")}</ul>
       </div>`;
   }

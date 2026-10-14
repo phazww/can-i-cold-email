@@ -33,7 +33,7 @@ const head = (title, desc, root, page) => `<!doctype html>
 const foot = `
 <footer class="site">
   <p>This is a research summary, not legal advice. Rules are those of the recipient's country and cover the first unsolicited marketing email to a business recipient. Data protection law (GDPR, UK GDPR) applies separately whenever an address identifies a person.</p>
-  <p>Last checked ${CHECKED}. Found a mistake or need another country? Write to <a href="https://x.com/phaz_dev" rel="noopener">@phaz_dev</a>.</p>
+  <p>Each country shows the date its rules were checked. Found a mistake or need another country? Write to <a href="https://x.com/phaz_dev" rel="noopener">@phaz_dev</a>.</p>
   <p>Visits are counted with GoatCounter, without cookies. Lists you check are never sent anywhere.</p>
 </footer>
 </div>
@@ -121,7 +121,7 @@ const index = `${head(
 <section id="method">
   <h2>Method and limits</h2>
   <ul class="method">
-    <li>Each country was checked on ${CHECKED} against the text of the law or the regulator's own guidance where it could be opened. ${nPrimary === RULES.length ? `All ${RULES.length} countries are checked that way.` : `${nPrimary} of ${RULES.length} countries are checked that way. The rest are marked "Commentary only".`}</li>
+    <li>Each country was checked between 10 and 14 October 2026 against the text of the law or the regulator's own guidance where it could be opened. ${nPrimary === RULES.length ? `All ${RULES.length} countries are checked that way.` : `${nPrimary} of ${RULES.length} countries are checked that way. The rest are marked "Commentary only".`}</li>
     <li>"No consent needed" never means no rules. Every country still requires a real sender identity and a working way to opt out.</li>
     <li>The country is taken from your list. If there is no country column, it is guessed from the domain ending (.de, .fr) and labelled as a guess.</li>
     <li>An address is treated as generic when the part before @ is a role word such as info, contact or sales, and as personal when the domain is a consumer mail provider such as gmail.com.</li>
@@ -161,10 +161,11 @@ ${foot}
 `;
   fs.writeFileSync(path.join(__dirname, "c", `${r.slug}.html`), page);
 }
-const urls = [BASE, ...RULES.map((r) => `${BASE}c/${r.slug}.html`)];
+const latest = RULES.map((r) => r.checked || CHECKED).sort().pop();
+const urls = [[BASE, latest], ...RULES.map((r) => [`${BASE}c/${r.slug}.html`, r.checked || CHECKED])];
 fs.writeFileSync(
   path.join(__dirname, "sitemap.xml"),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${CHECKED}</lastmod></url>`).join("\n")}\n</urlset>\n`
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([u, d]) => `  <url><loc>${u}</loc><lastmod>${d}</lastmod></url>`).join("\n")}\n</urlset>\n`
 );
 fs.writeFileSync(path.join(__dirname, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${BASE}sitemap.xml\n`);
 console.log(`Built index.html, ${RULES.length} country pages, sitemap.xml and robots.txt.`);

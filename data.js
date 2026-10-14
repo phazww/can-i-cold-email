@@ -354,5 +354,20 @@ window.RULES = [
       { label: "Zakon o elektroničkim komunikacijama, NN 76/22, članak 50 (Narodne novine, official gazette)", url: "https://narodne-novine.nn.hr/clanci/sluzbeni/2022_07_76_1116.html", type: "law" },
       { label: "Consolidated text NN 76/22, 14/24, 45/26 (zakon.hr)", url: "https://www.zakon.hr/z/182/Zakon-o-elektroni%C4%8Dkim-komunikacijama", type: "secondary" }
     ]
+  },
+  {
+    code: "GR", slug: "greece", name: "Greece", tlds: ["gr"], checked: "2026-10-14",
+    named: "consent", generic: "consent", personal: "consent", quality: "primary",
+    rule: "Article 11(1) of Law 3471/2006 allows unsolicited marketing email only with the subscriber's prior explicit consent, and Article 11(5) says the same rules apply to subscribers who are legal persons. Companies are protected the same way as individuals.",
+    must: [
+      "Get explicit consent before the first email, also from companies",
+      "Show clearly who the email is from and give a valid address where the recipient can ask you to stop",
+      "Existing customers: allowed for your own similar products if they could object free of charge at collection and in every message"
+    ],
+    notes: ["Later amendments changed the wording of paragraph 1 and added paragraphs, but the consolidated text still extends the rules to legal persons."],
+    sources: [
+      { label: "Law 3471/2006, article 11, consolidated Greek text (e-nomothesia.gr)", url: "https://www.e-nomothesia.gr/kat-dedomena-prosopikou-kharaktera/n-3471-2006.html", type: "law" },
+      { label: "Law 3471/2006 in English, original 2006 text (ADAE, Hellenic Authority for Communication Security and Privacy)", url: "https://www.adae.gr/images/pdf/LAW_3471-2006-EN.pdf", type: "regulator" }
+    ]
   }
 ];

@@ -397,5 +397,21 @@ window.RULES = [
       { label: "Electronic Communications Act (ЗЕС), art. 261 and § 1 item 49, consolidated text published by the Communications Regulation Commission (CRC)", url: "https://crc.bg/files/2025%20%D0%9F%D0%A0%D0%90%D0%92%D0%9D%D0%90/%D0%97%D0%95%D0%A1%20-%2025.11.2025%20%D0%B3.%20__%D0%91%D0%93__pdfCielaFile.pdf", type: "regulator" },
       { label: "E-Commerce Act (ЗЕТ), art. 6 (consolidated, kik-info.com)", url: "https://kik-info.com/normativna-baza/zakoni/0X2135530547/", type: "secondary" }
     ]
+  },
+  {
+    code: "LI", slug: "liechtenstein", name: "Liechtenstein", tlds: ["li"], checked: "2026-10-14",
+    named: "consent", generic: "consent", personal: "consent", quality: "primary",
+    rule: "Article 50(1) of the Communications Act (KomG) bans direct marketing by email unless the recipient gave prior express consent or is an existing customer who did not object. The rule speaks of the recipient and does not exempt companies. Article 50(2) allows one email asking for consent, if it says clearly and prominently that the recipient can refuse further messages and withdraw consent at any time.",
+    must: [
+      "Get express consent before the first marketing email, also from companies",
+      "You may send one email asking for consent, stating clearly that the recipient can refuse further messages and withdraw consent at any time",
+      "Do not email addresses that were generated at random or whose owner has refused",
+      "A permitted commercial email must be clearly recognisable as such when it arrives (E-Commerce Act, art. 7)"
+    ],
+    notes: ["The consolidated KomG text read is the version in force from 1 July 2020."],
+    sources: [
+      { label: "Kommunikationsgesetz (KomG), LGBl. 2006 Nr. 91, Art. 50 (gesetze.li, consolidated)", url: "https://www.gesetze.li/konso/pdf/2006091000", type: "law" },
+      { label: "E-Commerce-Gesetz (ECG), LGBl. 2003 Nr. 133, Art. 7 (gesetze.li, consolidated)", url: "https://www.gesetze.li/konso/pdf/2003133000", type: "law" }
+    ]
   }
 ];

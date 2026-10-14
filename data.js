@@ -326,5 +326,18 @@ window.RULES = [
     ],
     notes: ["Whether a named employee's address counts as published contact details of the company depends on where it was published. An address you guessed or bought is not published by the recipient."],
     sources: [{ label: "Zákon č. 452/2021 Z. z. o elektronických komunikáciách, § 116 (Slov-Lex, version in force from 18 Aug 2026)", url: "https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2021/452/", type: "law" }]
+  },
+  {
+    code: "SI", slug: "slovenia", name: "Slovenia", tlds: ["si"], checked: "2026-10-14",
+    named: "cond", generic: "ok", personal: "consent", quality: "primary",
+    rule: "Article 226 of the Electronic Communications Act (ZEKom-2) requires prior consent for marketing email, but paragraph 4 limits that to subscribers who are natural persons. Paragraph 6 allows email to a person's address when the company has published it as its own contact address. Every email must show who it is from and give a valid address for asking you to stop.",
+    must: [
+      "Write to a named employee only if the company published that address as its contact address",
+      "Do not hide or disguise who the email is from",
+      "Give a valid address where the recipient can ask you to stop",
+      "Existing customers: allowed for your own similar products if they could refuse free of charge at collection and in every message"
+    ],
+    notes: ["The source is the official but unofficially consolidated text on PISRS, in use from 19 June 2025. The binding text is in the Official Gazette (Uradni list RS 130/22 and later amendments)."],
+    sources: [{ label: "Zakon o elektronskih komunikacijah (ZEKom-2), article 226 (PISRS, consolidated text no. 2)", url: "https://pisrs.si/api/datoteke/integracije/358466648", type: "law" }]
   }
 ];

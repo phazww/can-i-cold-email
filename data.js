@@ -339,5 +339,20 @@ window.RULES = [
     ],
     notes: ["The source is the official but unofficially consolidated text on PISRS, in use from 19 June 2025. The binding text is in the Official Gazette (Uradni list RS 130/22 and later amendments)."],
     sources: [{ label: "Zakon o elektronskih komunikacijah (ZEKom-2), article 226 (PISRS, consolidated text no. 2)", url: "https://pisrs.si/api/datoteke/integracije/358466648", type: "law" }]
+  },
+  {
+    code: "HR", slug: "croatia", name: "Croatia", tlds: ["hr"], checked: "2026-10-14",
+    named: "unknown", generic: "ok", personal: "consent", quality: "primary",
+    rule: "Article 50(1) of the Electronic Communications Act requires the end user's prior consent for marketing email, but paragraph 4 says that rule does not apply to marketing sent to legal persons. Paragraph 3 applies to everyone: the sender's identity must not be hidden, and every email needs a valid address or number where the recipient can ask, free of charge, to stop.",
+    must: [
+      "Do not hide or misrepresent who the email is from",
+      "Give a valid email address or number where the recipient can ask you to stop, free of charge",
+      "Existing customers: allowed for your own similar products if they could object free of charge at collection and in every message"
+    ],
+    notes: ["The law does not say whether an email to a named employee at a company address counts as communication to the legal person. I did not find regulator guidance on this, so that case is marked as not verified."],
+    sources: [
+      { label: "Zakon o elektroničkim komunikacijama, NN 76/22, članak 50 (Narodne novine, official gazette)", url: "https://narodne-novine.nn.hr/clanci/sluzbeni/2022_07_76_1116.html", type: "law" },
+      { label: "Consolidated text NN 76/22, 14/24, 45/26 (zakon.hr)", url: "https://www.zakon.hr/z/182/Zakon-o-elektroni%C4%8Dkim-komunikacijama", type: "secondary" }
+    ]
   }
 ];

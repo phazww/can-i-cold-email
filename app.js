@@ -57,7 +57,10 @@
     const lines = text.split(/\r?\n/).filter((l) => l.trim());
     let countryCol = -1;
     if (lines.length && !EMAIL.test(lines[0])) {
-      countryCol = cells(lines[0]).findIndex((c) => /^(country|country code|pays|land|pa[ií]s|paese|kraj)$/i.test(c));
+      const header = cells(lines[0]).map((c) => c.toLowerCase().replace(/[\s_.-]+/g, ""));
+      // Exports from lead tools name the column in many ways: countryCode, country_code, company_country, location.country...
+      const exact = header.findIndex((c) => /^(country|countrycode|countryname|pays|land|pa[ií]s|paese|kraj)$/.test(c));
+      countryCol = exact >= 0 ? exact : header.findIndex((c) => /(country|countrycode)$/.test(c) && !/^(phone|tel)/.test(c));
     }
     const seen = new Set(), rows = [];
     for (const line of lines) {

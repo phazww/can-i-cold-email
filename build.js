@@ -93,7 +93,7 @@ const index = `${head(
     <ul class="must">
       <li>Open the CSV as it is. The country column is found under most common names: <code>country</code>, <code>countryCode</code>, <code>country_code</code>, <code>company_country</code>, <code>location.country</code>. Two-letter codes and country names both work.</li>
       <li>Use the column for where the person is, not where the company is headquartered. The rules follow the recipient, so a German employee of a US company is a German recipient.</li>
-      <li>Optional: add a <code>source</code> column. <code>published</code> means the company put the address on its own site or in a register, <code>vendor</code> means a tool found or guessed it. Tool names such as apollo or hunter count as vendor. In Canada, Australia, the Netherlands, Slovakia and Slovenia this changes the verdict.</li>
+      <li>Optional: add a <code>source</code> column. <code>published</code> means the company put the address on its own site or in a register, <code>vendor</code> means a tool found or guessed it. Tool names such as apollo or hunter count as vendor. In Canada, Australia, Japan, the Netherlands, Slovakia and Slovenia this changes the verdict.</li>
       <li>The downloaded CSV keeps every row with its verdict, so you can filter it in a spreadsheet before the send.</li>
     </ul>
     <p class="note"><a href="sample-export.csv" download>Download an example export</a> and open it here to see how it works.</p>
@@ -135,7 +135,7 @@ const index = `${head(
     <li>Each country was checked between 10 and 14 October 2026 against the text of the law or the regulator's own guidance where it could be opened. ${nPrimary === RULES.length ? `All ${RULES.length} countries are checked that way.` : `${nPrimary} of ${RULES.length} countries are checked that way. The rest are marked "Commentary only".`}</li>
     <li>"No consent needed" never means no rules. Every country still requires a real sender identity and a working way to opt out.</li>
     <li>The country is taken from your list. If there is no country column, it is guessed from the domain ending (.de, .fr) and labelled as a guess.</li>
-    <li>Optional: a <code>source</code> column saying where each address came from (<code>published</code> if the company put it on its own website or in a register, <code>vendor</code> if a tool found or guessed it). In Canada, Australia, the Netherlands, Slovakia and Slovenia the verdict depends on this, and the checker uses it.</li>
+    <li>Optional: a <code>source</code> column saying where each address came from (<code>published</code> if the company put it on its own website or in a register, <code>vendor</code> if a tool found or guessed it). In Canada, Australia, Japan, the Netherlands, Slovakia and Slovenia the verdict depends on this, and the checker uses it.</li>
     <li>An address is treated as generic when the part before @ is a role word such as info, contact or sales, and as personal when the domain is a consumer mail provider such as gmail.com.</li>
     <li>Not covered: existing customers, newsletters people signed up for, phone, SMS, LinkedIn, and the sender's own national rules.</li>
   </ul>

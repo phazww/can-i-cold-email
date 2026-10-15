@@ -97,6 +97,7 @@ const index = `${head(
       <li>The downloaded CSV keeps every row with its verdict, so you can filter it in a spreadsheet before the send.</li>
     </ul>
     <p class="note"><a href="sample-export.csv" download>Download an example export</a> and open it here to see how it works.</p>
+    <p class="note">Already working in Apify? The same check runs as an Actor on the output of any lead scraper: <a href="https://apify.com/phaz/cold-email-law-checker" rel="noopener">Cold Email Law Checker on Apify Store</a>.</p>
   </details>
   <div id="results"></div>
 </section>

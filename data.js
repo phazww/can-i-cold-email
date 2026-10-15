@@ -448,5 +448,19 @@ window.RULES = [
     ],
     notes: ["A published address does not count when it comes with a statement refusing advertising email. The ministerial ordinance adds detail on the published-address exception and on the items to display; those details are not covered here yet."],
     sources: [{ label: "特定電子メールの送信の適正化等に関する法律 (Act No. 26 of 2002), articles 3 and 4 (e-Gov Laws)", url: "https://laws.e-gov.go.jp/law/414AC0100000026", type: "law" }]
+  },
+  {
+    code: "NZ", slug: "new-zealand", name: "New Zealand", tlds: ["nz"], checked: "2026-10-15",
+    bySource: { vendor: { named: "consent", generic: "consent", personal: "consent" } },
+    named: "cond", generic: "cond", personal: "cond", quality: "primary",
+    rule: "Section 9 of the Unsolicited Electronic Messages Act 2007 bans commercial email without consent. Consent can be express, inferred from an existing relationship, or deemed: when the address was conspicuously published by a person in a business or official capacity, without a statement refusing unsolicited messages, and the email is relevant to that person's business, role or duties.",
+    must: [
+      "Use only an address published openly for business, with no 'no unsolicited messages' note, and make the email relevant to the person's role",
+      "Identify who authorised the email and give contact details that stay valid for at least 30 days",
+      "Include a clear, free unsubscribe that works by replying the same way, and honour it within 5 working days",
+      "Do not use harvested address lists"
+    ],
+    notes: ["The rules mirror Australia's Spam Act. Regulations can add or exclude circumstances for inferred consent; they are not covered here."],
+    sources: [{ label: "Unsolicited Electronic Messages Act 2007, sections 4, 9, 10 and 11 (New Zealand Legislation)", url: "https://www.legislation.govt.nz/act/public/2007/0007/latest/whole.html", type: "law" }]
   }
 ];

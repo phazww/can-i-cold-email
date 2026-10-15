@@ -88,6 +88,16 @@ const index = `${head(
     <select id="fallback"><option value="">nothing, mark as unknown</option>${sorted.map((r) => `<option value="${r.code}">${CC.esc(r.name)}</option>`).join("")}</select>
   </div>
   <p class="privacy">Your list never leaves this page. The check runs in your browser and no address is uploaded.</p>
+  <details class="export-help">
+    <summary>Using an export from a lead tool (Apify, Apollo, Hunter, Clay)?</summary>
+    <ul class="must">
+      <li>Open the CSV as it is. The country column is found under most common names: <code>country</code>, <code>countryCode</code>, <code>country_code</code>, <code>company_country</code>, <code>location.country</code>. Two-letter codes and country names both work.</li>
+      <li>Use the column for where the person is, not where the company is headquartered. The rules follow the recipient, so a German employee of a US company is a German recipient.</li>
+      <li>Optional: add a <code>source</code> column. <code>published</code> means the company put the address on its own site or in a register, <code>vendor</code> means a tool found or guessed it. Tool names such as apollo or hunter count as vendor. In Canada, Australia, the Netherlands, Slovakia and Slovenia this changes the verdict.</li>
+      <li>The downloaded CSV keeps every row with its verdict, so you can filter it in a spreadsheet before the send.</li>
+    </ul>
+    <p class="note"><a href="sample-export.csv" download>Download an example export</a> and open it here to see how it works.</p>
+  </details>
   <div id="results"></div>
 </section>
 

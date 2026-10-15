@@ -157,3 +157,8 @@ footer.site { border-top: 1px solid var(--line); padding: 26px 0 50px; color: va
   .offer { grid-template-columns: 1fr; }
   .offer-side { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 18px; }
 }
+
+.export-help { margin-top: 14px; font-size: 15px; }
+.export-help summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.export-help ul.must { margin-top: 10px; }
+code { font: 13px/1.4 var(--mono); background: var(--unknown-bg); padding: 1px 4px; border-radius: 4px; }
